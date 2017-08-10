@@ -1,0 +1,18 @@
+{
+  "data":[
+    {
+      "id":1,
+      "name":"pier11",
+      "location":"Pier 11 / Wall Street",
+      "headerId":1,
+      "headerName":"nyc-ferry-header"
+    },
+    {
+      "id":2,
+      "name":"nwill",
+      "location":"North Williamsburg",
+      "headerId":1,
+      "headerName":"nyc-ferry-header"
+    }
+  ]
+}
