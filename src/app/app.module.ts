@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { KiosksComponent } from './kiosks/kiosks.component';
 import { KioskListComponent } from './kiosks/kiosk-list/kiosk-list.component';
 import { KioskComponent } from './kiosks/kiosk/kiosk.component';
+import { HeaderBarsComponent } from './kiosks/kiosk/header-bars/header-bars.component';
 
 import { KioskService } from './kiosks/kiosk.service';
 import { KioskResolver } from './kiosks/kiosk-resolver.service';
@@ -17,7 +18,8 @@ import { KioskResolver } from './kiosks/kiosk-resolver.service';
     AppComponent,
     KiosksComponent,
     KioskListComponent,
-    KioskComponent
+    KioskComponent,
+    HeaderBarsComponent
   ],
   imports: [
     BrowserModule,
