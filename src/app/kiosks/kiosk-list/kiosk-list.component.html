@@ -2,11 +2,13 @@
 <hr>
 <ul>
   <li *ngFor="let kiosk of kiosks">
-    <div>
-      <p>ID: {{ kiosk.id }}</p>
-      <p>Name: {{ kiosk.name }}</p>
-      <p>Location: {{ kiosk.location }}</p>
-    </div>
+    <a [routerLink]="[kiosk.id]">
+      <div>
+        <p>ID: {{ kiosk.id }}</p>
+        <p>Name: {{ kiosk.name }}</p>
+        <p>Location: {{ kiosk.location }}</p>
+      </div>
+    </a>
     <hr>
   </li>
 </ul>
