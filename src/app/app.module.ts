@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KiosksComponent } from './kiosks/kiosks.component';
+
+import { KioskService } from './kiosks/kiosk.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import { KiosksComponent } from './kiosks/kiosks.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    KioskService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
