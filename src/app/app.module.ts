@@ -9,6 +9,7 @@ import { KioskListComponent } from './kiosks/kiosk-list/kiosk-list.component';
 import { KioskComponent } from './kiosks/kiosk/kiosk.component';
 
 import { KioskService } from './kiosks/kiosk.service';
+import { KioskResolver } from './kiosks/kiosk-resolver.service';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { KioskService } from './kiosks/kiosk.service';
     AppRoutingModule
   ],
   providers: [
-    KioskService
+    KioskService,
+    KioskResolver
   ],
   bootstrap: [AppComponent]
 })
