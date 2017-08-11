@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KiosksComponent } from './kiosks/kiosks.component';
+import { KioskListComponent } from './kiosks/kiosk-list/kiosk-list.component';
 
 import { KioskService } from './kiosks/kiosk.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KiosksComponent
+    KiosksComponent,
+    KioskListComponent
   ],
   imports: [
     BrowserModule,
