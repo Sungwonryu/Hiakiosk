@@ -3,5 +3,7 @@
 <p>ID: {{ kiosk.id }}</p>
 <p>Name: {{ kiosk.name }}</p>
 <p>Location: {{ kiosk.location }}</p>
-<p>Header ID: {{ kiosk.headerId }}</p>
-<p>Header Name: {{ kiosk.headerName }}</p>
+<hr>
+<hk-header-bars
+  [kiosk]="kiosk"
+  [headerBar]="kiosk.headerBar"></hk-header-bars>
