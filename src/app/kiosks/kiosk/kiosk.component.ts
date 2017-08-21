@@ -13,18 +13,13 @@ export class KioskComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {}
 
   ngOnInit() {
-    this.route.data.subscribe((data: Data) => {
-      if (data.kiosk) {
+    this.route.data
+      .subscribe((data: Data) => {
+        console.log(data);
         this.kiosk = data.kiosk;
-      } else {
-        // If kiosk is not found
-        console.log('Kiosk is not found');
-        this.router.navigate(['../'], {relativeTo: this.route});
-      }
-    })
+      });
   }
-
 }
