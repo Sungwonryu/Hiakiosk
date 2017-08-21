@@ -7,32 +7,61 @@ import { Kiosk } from './kiosk.model';
 
 @Injectable()
 export class KioskService {
-  jsonPath = '../../assets/json/';
+  path = '../../assets/json/';
   fileName = 'kiosk-list.json';
-  kiosks: Kiosk[];
-  kiosk: Kiosk;
+  url = `${this.path}${this.fileName}`;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
-  getList(): Observable<Kiosk[]> {
-    return this.http.get(`${this.jsonPath}${this.fileName}`)
+  /**
+   *  GetList() will return an Observable
+   *  which will return an array of Kiosk instances
+   */
+  getList(): Observable<any> {
+    return this.http.get(this.url)
       .map((res: Response) => {
-        this.kiosks = res.json().data.map((settings) => {
+        return res.json().data.map((settings) => {
           return new Kiosk(settings);
         });
-        return this.kiosks;
       });
   }
 
-  getKioskById(id: number): Observable<any> {
-    return this.http.get(`${this.jsonPath}${this.fileName}`)
+  /**
+   *  getKiosk() will return an Observable
+   *  which will return undeinfed or a Kiosk instance
+   *  whose id or name is matched with the param, id
+   *
+   *  param {string} id
+   */
+  getKiosk(id: string): Observable<any> {
+    return this.http.get(this.url)
       .map((res: Response) => {
-        this.kiosk = res.json().data.find((settings) => {
-          if (settings.id === id) {
-            return new Kiosk(settings);
-          }
-        });
-        return this.kiosk;
+        const data = res.json().data;
+        let matchedSettings: any;
+        let matchedKiosk: Kiosk | undefined;
+
+        // Check if id is a postive integer in string type
+        if (id.length > 0 && Number.isInteger(+id) && +id > 0) {
+          matchedSettings = data.find((settings) => {
+            return settings.id === +id;
+          });
+        }
+
+        // If matchedSettings is not found by comparing settings.id,
+        // compare id with settings.name
+        if (!matchedSettings) {
+          matchedSettings = data.find((settings) => {
+            return settings.name.toLowerCase() === id.toLowerCase();
+          });
+        }
+
+        // If matchedSettings is found,
+        // create an instance of Kiosk using the matchedSettings and return it
+        // Otherwise undefined will be returned
+        if (matchedSettings) {
+          matchedKiosk = new Kiosk(matchedSettings);
+        }
+        return matchedKiosk;
       });
   }
 }
