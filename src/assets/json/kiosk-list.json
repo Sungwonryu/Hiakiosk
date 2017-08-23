@@ -1,18 +1,52 @@
 {
-  "data":[
-    {
-      "id":1,
-      "name":"pier11",
-      "location":"Pier 11 / Wall Street",
-      "headerId":1,
-      "headerName":"nyc-ferry-header"
+  "data": [{
+      "id": 1,
+      "name": "pier11",
+      "location": "Pier 11 / Wall Street",
+      "headerBar": {
+        "componentId": 1,
+        "componentName": "nyc-ferry-header-bar",
+        "data": {}
+      },
+      "topBar": {
+        "componentId": 1,
+        "componentName": "count-down-top-bar",
+        "data": {
+          "rows": 3
+        }
+      },
+      "bottomBar": {
+        "componentId": 1,
+        "componentName": "5-button-bottom-bar",
+        "data": {}
+      }
     },
     {
-      "id":2,
-      "name":"nwill",
-      "location":"North Williamsburg",
-      "headerId":1,
-      "headerName":"nyc-ferry-header"
+      "id": 2,
+      "name": "nwill",
+      "location": "North Williamsburg",
+      "headerBar": {
+        "componentId": 1,
+        "componentName": "nyc-ferry-header-bar",
+        "data": {}
+      },
+      "topBar": {
+        "componentId": 2,
+        "componentName": "count-down-top-bar",
+        "data": {
+          "rows": 2
+        }
+      },
+      "bottomBar": {
+        "componentId": 2,
+        "componentName": "6-button-bottom-bar",
+        "data": {}
+      },
+      "appBar": {
+        "componentId": 1,
+        "componentName": "5-button-app-bar",
+        "data": {}
+      }
     }
   ]
 }
