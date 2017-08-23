@@ -4,13 +4,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// kiosk
 import { KiosksComponent } from './kiosks/kiosks.component';
 import { KioskListComponent } from './kiosks/kiosk-list/kiosk-list.component';
 import { KioskComponent } from './kiosks/kiosk/kiosk.component';
-import { HeaderBarsComponent } from './kiosks/kiosk/header-bars/header-bars.component';
 
+// headerBar
+import { HeaderBarHostComponent } from './kiosks/kiosk/header-bar-host/header-bar-host.component';
+import { NycferryHeaderBarComponent } from './kiosks/kiosk/header-bar-host/nycferry-header-bar/nycferry-header-bar.component';
+
+// shared
+import { ComponentHostDirective } from './shared/component-host/component-host.directive';
+
+// services
 import { KioskService } from './kiosks/kiosk.service';
 import { KioskResolver } from './kiosks/kiosk-resolver.service';
+import { HeaderBarService } from './kiosks/kiosk/header-bar-host/header-bar.service';
 
 
 @NgModule({
@@ -19,7 +29,9 @@ import { KioskResolver } from './kiosks/kiosk-resolver.service';
     KiosksComponent,
     KioskListComponent,
     KioskComponent,
-    HeaderBarsComponent
+    HeaderBarHostComponent,
+    NycferryHeaderBarComponent,
+    ComponentHostDirective
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,11 @@ import { KioskResolver } from './kiosks/kiosk-resolver.service';
   ],
   providers: [
     KioskService,
-    KioskResolver
+    KioskResolver,
+    HeaderBarService
+  ],
+  entryComponents: [
+    NycferryHeaderBarComponent
   ],
   bootstrap: [AppComponent]
 })
