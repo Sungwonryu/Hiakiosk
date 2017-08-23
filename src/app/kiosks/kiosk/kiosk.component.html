@@ -4,6 +4,4 @@
 <p>Name: {{ kiosk.name }}</p>
 <p>Location: {{ kiosk.location }}</p>
 <hr>
-<hk-header-bars
-  [kiosk]="kiosk"
-  [headerBar]="kiosk.headerBar"></hk-header-bars>
+<hk-header-bar-host [kiosk]="kiosk"></hk-header-bar-host>
