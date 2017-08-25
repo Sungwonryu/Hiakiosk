@@ -1,8 +1,14 @@
 {
-  "data": [{
+  "kioskList": [{
       "id": 1,
       "name": "pier11",
-      "location": "Pier 11 / Wall Street",
+      "data": {
+        "location": "Pier 11 / Wall Street"
+      },
+      "kioskGroup": {
+        "kioskGroupId": 1,
+        "kioskGroupName": "nycferry"
+      },
       "headerBar": {
         "componentId": 1,
         "componentName": "nyc-ferry-header-bar",
@@ -24,7 +30,46 @@
     {
       "id": 2,
       "name": "nwill",
-      "location": "North Williamsburg",
+      "data": {
+        "location": "North Willamsburg"
+      },
+      "kioskGroup": {
+        "kioskGroupId": 1,
+        "kioskGroupName": "nycferry"
+      },
+      "headerBar": {
+        "componentId": 1,
+        "componentName": "nyc-ferry-header-bar",
+        "data": {}
+      },
+      "topBar": {
+        "componentId": 2,
+        "componentName": "count-down-top-bar",
+        "data": {
+          "rows": 2
+        }
+      },
+      "bottomBar": {
+        "componentId": 2,
+        "componentName": "6-button-bottom-bar",
+        "data": {}
+      },
+      "appBar": {
+        "componentId": 1,
+        "componentName": "5-button-app-bar",
+        "data": {}
+      }
+    },
+    {
+      "id": 3,
+      "name": "wwpropelify",
+      "data": {
+        "location": "Propelify"
+      },
+      "kioskGroup": {
+        "kioskGroupId": 2,
+        "kioskGroupName": "wework"
+      },
       "headerBar": {
         "componentId": 1,
         "componentName": "nyc-ferry-header-bar",
