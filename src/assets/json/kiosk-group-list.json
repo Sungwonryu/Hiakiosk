@@ -1,0 +1,17 @@
+{
+  "kioskGroupList": [{
+      "id": 1,
+      "name": "nycferry",
+      "data": {
+        "backgroundColor": "#123456"
+      }
+    },
+    {
+      "id": 2,
+      "name": "wework",
+      "data": {
+        "backgroundColor": "#000000"
+      }
+    }
+  ]
+}
