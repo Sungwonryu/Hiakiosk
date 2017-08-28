@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { Kiosk } from '../kiosk.model';
 import { KioskService } from '../kiosk.service';
@@ -9,14 +10,11 @@ import { KioskService } from '../kiosk.service';
   styleUrls: ['./kiosk-list.component.scss']
 })
 export class KioskListComponent implements OnInit {
-  kiosks: Kiosk[];
+  kiosks: Observable<Kiosk[]>;
 
   constructor(private kioskService: KioskService) { }
 
   ngOnInit() {
-    this.kioskService.getList().subscribe((list: Kiosk[]) => {
-      this.kiosks = list;
-    });
+    this.kiosks = this.kioskService.getList();
   }
-
 }
