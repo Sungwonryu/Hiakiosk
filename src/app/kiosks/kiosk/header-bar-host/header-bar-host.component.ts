@@ -2,7 +2,7 @@ import {
   Component,
   Input,
   OnInit,
-  AfterViewInit,
+  AfterContentInit,
   ViewChild,
   ComponentFactoryResolver,
   Type
@@ -13,7 +13,7 @@ import { HeaderBar } from './header-bar.model';
 import { HeaderBarService } from './header-bar.service';
 
 import { ComponentHostDirective } from '../../../shared/component-host/component-host.directive';
-import { ComponentHostInterface } from '../../../shared/component-host/component-host.interface';
+import { ComponentInterface } from '../../../shared/component-host/component.interface';
 import { ComponentHost } from '../../../shared/component-host/component-host.model';
 
 
@@ -22,7 +22,7 @@ import { ComponentHost } from '../../../shared/component-host/component-host.mod
   templateUrl: './header-bar-host.component.html',
   styleUrls: ['./header-bar-host.component.scss']
 })
-export class HeaderBarHostComponent implements OnInit, AfterViewInit {
+export class HeaderBarHostComponent implements OnInit, AfterContentInit {
   @Input('kiosk') kiosk: Kiosk;
   @ViewChild(ComponentHostDirective) componentHostEl: ComponentHostDirective;
   componentHost: HeaderBar;
@@ -35,7 +35,7 @@ export class HeaderBarHostComponent implements OnInit, AfterViewInit {
     this.componentHost = this.headerBarService.getComponentHost(this.kiosk.headerBar.componentId);
   }
 
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     this.loadComponent();
   }
 
@@ -44,6 +44,6 @@ export class HeaderBarHostComponent implements OnInit, AfterViewInit {
     let viewContainerRef = this.componentHostEl.viewContainerRef;
     viewContainerRef.clear();
     let componentRef = viewContainerRef.createComponent(componentFactory);
-    (<ComponentHostInterface>componentRef.instance).data = this.componentHost.data;
+    (<ComponentInterface>componentRef.instance).data = { kiosk: this.kiosk };
   }
 }
