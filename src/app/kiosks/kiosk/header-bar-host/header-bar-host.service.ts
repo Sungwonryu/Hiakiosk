@@ -1,28 +1,22 @@
 import { Injectable } from '@angular/core';
+import { ComponentHost } from '../../../shared/component-host/component-host.model';
 import { ComponentHostService } from '../../../shared/component-host/component-host.service';
 
-import { HeaderBar } from './header-bar.model';
 import { NycferryHeaderBarComponent } from './nycferry-header-bar/nycferry-header-bar.component';
 
 @Injectable()
-export class HeaderBarService extends ComponentHostService {
+export class HeaderBarHostService extends ComponentHostService {
   settingsList = [
     {
       "componentId": 1,
-      "componentName": "nyc-ferry-header-bar",
+      "componentName": "nycferry-header-bar",
       "component": NycferryHeaderBarComponent
     }
   ];
-  componentList: HeaderBar[];
+  componentList: ComponentHost[];
 
   constructor() {
     super();
     this.setComponentList();
-  }
-
-  setComponentList() {
-    this.componentList = this.settingsList.map((settings) => {
-      return new HeaderBar(settings);
-    });
   }
 }
