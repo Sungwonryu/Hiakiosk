@@ -1,7 +1,7 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[component-host]'
+  selector: '[hk-component-host]'
 })
 export class ComponentHostDirective {
   constructor(public viewContainerRef: ViewContainerRef) { }
