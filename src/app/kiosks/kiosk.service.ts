@@ -18,7 +18,7 @@ export class KioskService {
   constructor(private httpClient: HttpClient) { }
 
   /**
-   *  GetData() will return an Observable
+   *  getData() will return an Observable
    *  which will return an array of data objects for each http call
    */
   getData(): Observable<any> {
@@ -29,6 +29,7 @@ export class KioskService {
     const kioskGroupListUrl = `${jsonPath}${kioskGroupListFile}`;
 
     return Observable.forkJoin([
+      // Change http to httpClient
       // this.http.get(kioskListUrl).map((res: Response) => res.json().kioskList),
       // this.http.get(kioskGroupListUrl).map((res: Response) => res.json().kioskGroupList)
       this.httpClient.get<any>(kioskListUrl).map((res) => res.kioskList),
@@ -37,23 +38,25 @@ export class KioskService {
   }
 
   /**
-   *  GetList() will return an Observable
+   *  getList() will return an Observable
    *  which will return an array of Kiosk instances
    *  after setting kioskGroup properties
    */
   getList(): Observable<Kiosk[]> {
     if (this.kioskList) {
       // If this.kioskList exists,
-      // return an Observable which will return an array of Kiosk instances
+      // return an Observable of this.kioskList
       return Observable.of(this.kioskList);
     } else {
       // If this.kioskList doesn't exist,
-      // return an Observable getting from this.getData()
+      // return an Observable of this.kioskList after getting the data from this.getData()
       return this.getData().map((data: any[]) => {
         let kioskSettingsList = data[0];
         let kioskGroupSettingsList = data[1];
 
         this.kioskList = kioskSettingsList.map((kioskSettings) => {
+          // Find the matched kioskGroup from kioskGroupSettingsList
+          // and set it as kioskSettings.kioskGroup
           let matchedKioskGroup = this.getMatchedKioskGroup(kioskGroupSettingsList, kioskSettings.kioskGroup.kioskGroupId);
           kioskSettings.kioskGroup = matchedKioskGroup;
 
@@ -76,7 +79,7 @@ export class KioskService {
     if (this.kioskList) {
       return Observable.of(this.getMatchedKiosk(this.kioskList, kioskId));
     } else {
-      this.getList().map((kioskList: Kiosk[]) => {
+      return this.getList().map((kioskList: Kiosk[]) => {
         return this.getMatchedKiosk(kioskList, kioskId);
       });
     }
@@ -110,8 +113,9 @@ export class KioskService {
     let matchedKiosk;
 
     // Check if kioskId is a postive integer in string type
+    // If so, compare KioskId with kiosk.id
     if (kioskId.length > 0 && Number.isInteger(+kioskId) && +kioskId > 0) {
-      matchedKiosk = kioskList.find((kiosk) => {
+      matchedKiosk = kioskList.find((kiosk: Kiosk) => {
         return kiosk.id === +kioskId;
       });
     }
