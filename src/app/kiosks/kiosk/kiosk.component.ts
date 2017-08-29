@@ -18,8 +18,8 @@ export class KioskComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .subscribe((data: Data) => {
-        console.log(data);
         this.kiosk = data.kiosk;
+        console.log('KioskComponent.data: ', data);
       });
   }
 }
