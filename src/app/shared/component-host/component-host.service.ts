@@ -4,16 +4,16 @@ import { ComponentHost } from './component-host.model';
 @Injectable()
 export class ComponentHostService {
   settingsList: any[] = [];
-  componentList: any[] = [];
+  componentList: ComponentHost[];
 
   constructor() {
-    this.setComponentList();
+    // this.setComponentList();
   }
 
   setComponentList() {
-    // this.componentList = this.settingsList.map((settings) => {
-    //   return new ComponentHost(setings);
-    // });
+    this.componentList = this.settingsList.map((settings) => {
+      return new ComponentHost(settings);
+    });
   }
 
   getComponentHost(componentId: number) {
