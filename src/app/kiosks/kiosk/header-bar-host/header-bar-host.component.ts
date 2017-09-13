@@ -10,7 +10,7 @@ import {
 
 import { Kiosk } from '../../kiosk.model';
 import { HeaderBar } from './header-bar.model';
-import { HeaderBarService } from './header-bar.service';
+import { HeaderBarHostService } from './header-bar-host.service';
 
 import { ComponentHostDirective } from '../../../shared/component-host/component-host.directive';
 import { ComponentInterface } from '../../../shared/component-host/component.interface';
@@ -28,11 +28,11 @@ export class HeaderBarHostComponent implements OnInit, AfterContentInit {
   componentHost: HeaderBar;
 
   constructor(
-    private headerBarService: HeaderBarService,
+    private headerBarHostService: HeaderBarHostService,
     private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    this.componentHost = this.headerBarService.getComponentHost(this.kiosk.headerBar.componentId);
+    this.componentHost = this.headerBarHostService.getComponentHost(this.kiosk.headerBar.componentId);
   }
 
   ngAfterContentInit() {

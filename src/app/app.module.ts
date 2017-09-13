@@ -20,7 +20,7 @@ import { ComponentHostDirective } from './shared/component-host/component-host.d
 // services
 import { KioskService } from './kiosks/kiosk.service';
 import { KioskResolver } from './kiosks/kiosk-resolver.service';
-import { HeaderBarService } from './kiosks/kiosk/header-bar-host/header-bar.service';
+import { HeaderBarHostService } from './kiosks/kiosk/header-bar-host/header-bar-host.service';
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import { HeaderBarService } from './kiosks/kiosk/header-bar-host/header-bar.serv
   providers: [
     KioskService,
     KioskResolver,
-    HeaderBarService
+    HeaderBarHostService
   ],
   entryComponents: [
     NycferryHeaderBarComponent
