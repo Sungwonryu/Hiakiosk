@@ -9,7 +9,6 @@ import {
 } from '@angular/core';
 
 import { Kiosk } from '../../kiosk.model';
-import { HeaderBar } from './header-bar.model';
 import { HeaderBarHostService } from './header-bar-host.service';
 
 import { ComponentHostDirective } from '../../../shared/component-host/component-host.directive';
@@ -25,7 +24,7 @@ import { ComponentHost } from '../../../shared/component-host/component-host.mod
 export class HeaderBarHostComponent implements OnInit, AfterContentInit {
   @Input('kiosk') kiosk: Kiosk;
   @ViewChild(ComponentHostDirective) componentHostEl: ComponentHostDirective;
-  componentHost: HeaderBar;
+  componentHost: ComponentHost;
 
   constructor(
     private headerBarHostService: HeaderBarHostService,
