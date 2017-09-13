@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // kiosk
+import { KioskGroupListComponent } from './kiosks/kiosk-group-list/kiosk-group-list.component';
 import { KiosksComponent } from './kiosks/kiosks.component';
 import { KioskListComponent } from './kiosks/kiosk-list/kiosk-list.component';
 import { KioskComponent } from './kiosks/kiosk/kiosk.component';
@@ -31,7 +32,8 @@ import { HeaderBarHostService } from './kiosks/kiosk/header-bar-host/header-bar-
     KioskComponent,
     HeaderBarHostComponent,
     NycferryHeaderBarComponent,
-    ComponentHostDirective
+    ComponentHostDirective,
+    KioskGroupListComponent
   ],
   imports: [
     BrowserModule,
