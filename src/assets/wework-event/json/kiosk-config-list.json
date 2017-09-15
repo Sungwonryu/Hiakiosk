@@ -1,0 +1,15 @@
+{
+  "data": [{
+    "id": 1,
+    "name": "wework-event-propelify",
+    "headerBar": {
+      "id": 2,
+      "name": "wework-header-bar"
+    },
+    "bottomBar": {
+      "id": 4,
+      "name": "wework-propelify-bottom-bar"
+    },
+    "data": {}
+  }]
+}

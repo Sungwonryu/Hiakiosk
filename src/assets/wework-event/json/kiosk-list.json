@@ -1,0 +1,13 @@
+{
+  "data": [{
+    "id": 1,
+    "name": "propelify",
+    "kioskConfig": {
+      "id": 1,
+      "name": "wework-event-propelify"
+    },
+    "data": {
+      "location": "Propelify"
+    }
+  }]
+}
