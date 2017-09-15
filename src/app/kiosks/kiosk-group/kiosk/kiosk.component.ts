@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Data } from '@angular/router';
 
-import { Kiosk } from '../kiosk.model';
+import { KioskGroup } from '../../models/kiosk-group.model';
+import { Kiosk } from '../../models/kiosk.model';
 
 @Component({
   selector: 'hk-kiosk',
@@ -9,6 +10,7 @@ import { Kiosk } from '../kiosk.model';
   styleUrls: ['./kiosk.component.scss']
 })
 export class KioskComponent implements OnInit {
+  kioskGroup: KioskGroup;
   kiosk: Kiosk;
 
   constructor(
@@ -18,7 +20,8 @@ export class KioskComponent implements OnInit {
   ngOnInit() {
     this.route.data
       .subscribe((data: Data) => {
-        this.kiosk = data.kiosk;
+        this.kioskGroup = data.kioskData.kioskGroup;
+        this.kiosk = data.kioskData.kiosk;
         console.log('KioskComponent.data: ', data);
       });
   }
