@@ -1,0 +1,20 @@
+<h1>Kiosk Group</h1>
+<hr>
+<p>KioskGroup ID: {{ kioskGroup.id }}</p>
+<p>KioskGroup Name: {{ kioskGroup.name }}</p>
+<p>backgroundColor: {{ kioskGroup.data.backgroundColor }}</p>
+<hr>
+  <ul>
+    <li *ngFor="let kiosk of kioskGroup.kioskList">
+      <a [routerLink]="[kiosk.name]">
+        <div>
+          <h2>Kiosk</h2>
+          <p>Kiosk ID: {{ kiosk.id }}</p>
+          <p>Kiosk Name: {{ kiosk.name }}</p>
+          <p>Location: {{ kiosk.data.location }}</p>
+        </div>
+        <br>
+      </a>
+    </li>
+  </ul>
+<hr>
