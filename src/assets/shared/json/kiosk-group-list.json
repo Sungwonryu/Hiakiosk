@@ -1,0 +1,30 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "nycferry",
+      "data": {
+        "kioskListFilePath": "nycferry/json/kiosk-list.json",
+        "kioskConfigListFilePath": "nycferry/json/kiosk-config-list.json",
+        "backgroundColor": "#123456"
+      }
+    },
+    {
+      "id": 2,
+      "name": "wework",
+      "data": {
+        "kioskListFilePath": "wework/json/kiosk-list.json",
+        "kioskConfigListFilePath": "wework/json/kiosk-config-list.json",
+        "backgroundColor": "#000000"
+      }
+    },
+    {
+      "id": 3,
+      "name": "wework-event",
+      "data": {
+        "kioskListFilePath": "wework-event/json/kiosk-list.json",
+        "kioskConfigListFilePath": "wework-event/json/kiosk-config-list.json",
+        "backgroundColor": "#000000"
+      }
+    }
+  ]
+}
