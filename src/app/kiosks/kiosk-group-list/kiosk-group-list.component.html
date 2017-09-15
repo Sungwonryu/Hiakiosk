@@ -1,3 +1,26 @@
-<p>
-  kiosk-group-list works!
-</p>
+<h1>Kiosk List</h1>
+<hr>
+<ul>
+<li *ngFor="let kioskGroup of (kioskGroupList | async)">
+  <div>
+    <a [routerLink]="[kioskGroup.name]">
+      <h3>KioskGroup ID: {{ kioskGroup.id }}</h3>
+      <h3>KioskGroup Name: {{ kioskGroup.name }}</h3>
+      <h3>backgroundColor: {{ kioskGroup.data.backgroundColor }}</h3>
+    </a>
+    <br>
+    <h3>Kiosk List</h3>
+    <br>
+    <ul>
+      <li *ngFor="let kiosk of kioskGroup.kioskList">
+        <a [routerLink]="[kioskGroup.name, kiosk.name]">
+          <p>Kiosk ID: {{ kiosk.id }}</p>
+          <p>Kiosk Name: {{ kiosk.name }}</p>
+        </a>
+        <br>
+      </li>
+    </ul>
+    <hr>
+  </div>
+</li>
+</ul>
