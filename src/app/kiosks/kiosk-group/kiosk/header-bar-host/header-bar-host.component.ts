@@ -8,12 +8,13 @@ import {
   Type
 } from '@angular/core';
 
-import { Kiosk } from '../../kiosk.model';
+import { Kiosk } from '../../../models/kiosk.model';
+import { KioskGroup } from '../../../models/kiosk-group.model';
 import { HeaderBarHostService } from './header-bar-host.service';
 
-import { ComponentHostDirective } from '../../../shared/component-host/component-host.directive';
-import { ComponentInterface } from '../../../shared/component-host/component.interface';
-import { ComponentHost } from '../../../shared/component-host/component-host.model';
+import { ComponentHostDirective } from '../../../../shared/component-host/component-host.directive';
+import { ComponentInterface } from '../../../../shared/component-host/component.interface';
+import { ComponentHost } from '../../../../shared/component-host/component-host.model';
 
 
 @Component({
@@ -23,6 +24,7 @@ import { ComponentHost } from '../../../shared/component-host/component-host.mod
 })
 export class HeaderBarHostComponent implements OnInit, AfterContentInit {
   @Input('kiosk') kiosk: Kiosk;
+  @Input('kioskGroup') kioskGroup: KioskGroup;
   @ViewChild(ComponentHostDirective) componentHostEl: ComponentHostDirective;
   componentHost: ComponentHost;
 
@@ -31,7 +33,7 @@ export class HeaderBarHostComponent implements OnInit, AfterContentInit {
     private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
-    this.componentHost = this.headerBarHostService.getComponentHost(this.kiosk.headerBar.componentId);
+    this.componentHost = this.headerBarHostService.getComponentHost(this.kiosk.kioskConfig.headerBar.componentId);
   }
 
   ngAfterContentInit() {
