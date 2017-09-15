@@ -1,0 +1,41 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "nycferry-pier11",
+      "headerBar": {
+        "id": 1,
+        "name": "nycferry-header-bar"
+      },
+      "topBar": {
+        "id": 1,
+        "name": "count-down-top-bar"
+      },
+      "bottomBar": {
+        "id": 1,
+        "name": "nycferry-bottom-bar"
+      },
+      "data": {}
+    },
+    {
+      "id": 2,
+      "name": "nycferry-nwill",
+      "headerBar": {
+        "id": 1,
+        "name": "nycferry-header-bar"
+      },
+      "topBar": {
+        "id": 2,
+        "name": "count-down-top-bar"
+      },
+      "bottomBar": {
+        "id": 2,
+        "name": "nycferry-bottom-bar"
+      },
+      "appBar": {
+        "id": 1,
+        "name": "nycferry-app-bar"
+      },
+      "data": {}
+    }
+  ]
+}

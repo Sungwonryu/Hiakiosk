@@ -1,0 +1,25 @@
+{
+  "data": [{
+      "id": 1,
+      "name": "pier11",
+      "kioskConfig": {
+        "id": 1,
+        "name": "nycferry-pier11"
+      },
+      "data": {
+        "location": "Pier 11 / Wall Street"
+      }
+    },
+    {
+      "id": 2,
+      "name": "nwill",
+      "kioskConfig": {
+        "id": 2,
+        "name": "nycferry-nwill"
+      },
+      "data": {
+        "location": "North Willamsburg"
+      }
+    }
+  ]
+}
